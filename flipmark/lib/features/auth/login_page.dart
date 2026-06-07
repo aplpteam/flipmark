@@ -1,18 +1,28 @@
+
 import 'package:flutter/material.dart';
 import 'widgets/auth_field_widget.dart';
 import 'widgets/enter_button_widget.dart';
 import 'widgets/auth_appbar_widget.dart';
+import 'signup_page.dart';
+import 'widgets/navigation_text.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
-  @override
+@override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +35,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: _genChildren(_emailController, _passwordController),
+              children: _genChildren(
+                _emailController,
+                _passwordController,
+                context,
+              ),
             ),
           ),
         ),
@@ -36,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
   List<Widget> _genChildren(
     TextEditingController emailController,
     TextEditingController passwordController,
+    BuildContext context,
   ) {
     List<Widget> children = [
       SizedBox(height: 160),
@@ -59,7 +74,20 @@ class _LoginPageState extends State<LoginPage> {
           print(passwordController.text);
         },
       ),
+      SizedBox(height: 10),
+      NavigationText(
+        normalText: "Don't have an account yet?",
+        buttonedText: "Sign Up!",
+        onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute<void>(builder: (context) => SignUpPage(), requestFocus: true),    
+            );
+        },
+      ),
     ];
     return children;
   }
 }
+
+
