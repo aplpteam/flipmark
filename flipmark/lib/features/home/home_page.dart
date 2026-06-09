@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flipmark/features/scanner/scanner_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -40,13 +41,27 @@ class Menu extends StatelessWidget {
                 Column(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ScannerPage(mode: "Camera"),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(fixedSize: Size(150, 75)),
                       child: Text('Camera Scan'),
                     ),
                     SizedBox(height: 100),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ScannerPage(mode: "File"),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(fixedSize: Size(150, 75)),
                       child: Text('File Entry'),
                     ),
