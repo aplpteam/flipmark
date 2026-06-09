@@ -7,6 +7,7 @@ import 'widgets/auth_field_widget.dart';
 import 'widgets/enter_button_widget.dart';
 import 'widgets/navigation_text.dart';
 import 'login_page.dart';
+import 'auth_service.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -75,7 +76,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 EnterButton(
                   label: 'Sign Up',
                   onPressed: () {
-                    print("pressed");
+                    AuthService.authCreateAccount(
+                      emailAddress: _emailController.text,
+                      password: _passwordController.text,
+                    );
                   },
                   icon: Icon(Icons.arrow_forward),
                 ),
