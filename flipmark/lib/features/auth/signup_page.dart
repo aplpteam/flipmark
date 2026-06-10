@@ -76,10 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 EnterButton(
                   label: 'Sign Up',
                   onPressed: () {
-                    AuthService.authCreateAccount(
-                      emailAddress: _emailController.text,
-                      password: _passwordController.text,
-                    );
+                    print("hello world");
                   },
                   icon: Icon(Icons.arrow_forward),
                 ),
