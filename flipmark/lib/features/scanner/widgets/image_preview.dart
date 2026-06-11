@@ -4,16 +4,17 @@ import 'package:image_picker/image_picker.dart';
 
 class ImagePreview extends StatelessWidget {
   final XFile? image;
+  final bool isCameraMode;
 
-  const ImagePreview({super.key, this.image});
+  const ImagePreview({super.key, this.image, required this.isCameraMode});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 450,
+      width: 400,
       height: 500,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
+        border: image == null ? Border.all(color: Colors.grey) : null,
         borderRadius: BorderRadius.circular(12),
       ),
       child: image == null
@@ -31,7 +32,10 @@ class ImagePreview extends StatelessWidget {
 
                   if (snapshot.connectionState == ConnectionState.done &&
                       snapshot.hasData) {
-                    return Image.memory(snapshot.data!, fit: BoxFit.contain);
+                    return Image.memory(
+                      snapshot.data!,
+                      fit: isCameraMode ? BoxFit.cover : BoxFit.contain,
+                    );
                     // Image.memory() stores the raw bytes (Uin8List)
                   }
 

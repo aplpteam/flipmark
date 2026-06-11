@@ -102,7 +102,7 @@ class _CameraHandlerState extends State<CameraHandler>
     return Column(
       children: [
         Container(
-          width: 450,
+          width: 400,
           height: 500,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
           child: ClipRRect(
