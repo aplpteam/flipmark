@@ -41,7 +41,7 @@ class _ScannerPageState extends State<ScannerPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (!isCameraMode || hasCapturedImage) ...[
-                ImagePreview(image: _image),
+                ImagePreview(image: _image, isCameraMode: isCameraMode),
                 const SizedBox(height: 20),
               ],
 
