@@ -4,8 +4,9 @@ import 'package:image_picker/image_picker.dart';
 
 class ImagePreview extends StatelessWidget {
   final XFile? image;
+  final bool isCameraMode;
 
-  const ImagePreview({super.key, this.image});
+  const ImagePreview({super.key, this.image, required this.isCameraMode});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class ImagePreview extends StatelessWidget {
       width: 400,
       height: 500,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
+        border: image == null ? Border.all(color: Colors.grey) : null,
         borderRadius: BorderRadius.circular(12),
       ),
       child: image == null
@@ -33,9 +34,7 @@ class ImagePreview extends StatelessWidget {
                       snapshot.hasData) {
                     return Image.memory(
                       snapshot.data!,
-                      width: 300, // Force the image asset width
-                      height: 400,
-                      fit: BoxFit.cover,
+                      fit: isCameraMode ? BoxFit.cover : BoxFit.contain,
                     );
                     // Image.memory() stores the raw bytes (Uin8List)
                   }
