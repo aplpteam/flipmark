@@ -1,0 +1,176 @@
+[
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_plugin.dir\\ephemeral\\cpp_client_wrapper\\core_implementations.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\core_implementations.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_plugin.dir/ephemeral/cpp_client_wrapper/core_implementations.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_plugin.dir\\ephemeral\\cpp_client_wrapper\\standard_codec.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\standard_codec.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_plugin.dir/ephemeral/cpp_client_wrapper/standard_codec.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_plugin.dir\\ephemeral\\cpp_client_wrapper\\plugin_registrar.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\plugin_registrar.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_plugin.dir/ephemeral/cpp_client_wrapper/plugin_registrar.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\core_implementations.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\core_implementations.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/core_implementations.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\standard_codec.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\standard_codec.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/standard_codec.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\flutter_engine.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\flutter_engine.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/flutter_engine.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/flutter",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flutter_wrapper_app.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flutter_wrapper_app.dir\\ephemeral\\cpp_client_wrapper\\flutter_view_controller.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\cpp_client_wrapper\\flutter_view_controller.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc",
+  "output": "flutter/CMakeFiles/flutter_wrapper_app.dir/ephemeral/cpp_client_wrapper/flutter_view_controller.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/runner",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\flutter_window.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\flutter_window.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/runner/flutter_window.cpp",
+  "output": "runner/CMakeFiles/flipmark.dir/flutter_window.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/runner",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\main.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\main.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/runner/main.cpp",
+  "output": "runner/CMakeFiles/flipmark.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/runner",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\utils.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\utils.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/runner/utils.cpp",
+  "output": "runner/CMakeFiles/flipmark.dir/utils.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/runner",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\win32_window.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\win32_window.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/runner/win32_window.cpp",
+  "output": "runner/CMakeFiles/flipmark.dir/win32_window.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/runner",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\__\\flutter\\generated_plugin_registrant.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\generated_plugin_registrant.cc",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/generated_plugin_registrant.cc",
+  "output": "runner/CMakeFiles/flipmark.dir/__/flutter/generated_plugin_registrant.cc.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\camera_windows.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\camera_windows.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/camera_windows.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/camera_windows.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\camera_plugin.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\camera_plugin.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/camera_plugin.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/camera_plugin.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\camera.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\camera.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/camera.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/camera.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\capture_controller.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\capture_controller.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/capture_controller.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/capture_controller.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\capture_engine_listener.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\capture_engine_listener.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/capture_engine_listener.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/capture_engine_listener.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\string_utils.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\string_utils.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/string_utils.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/string_utils.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\capture_device_info.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\capture_device_info.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/capture_device_info.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/capture_device_info.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\messages.g.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\messages.g.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/messages.g.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/messages.g.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\preview_handler.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\preview_handler.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/preview_handler.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/preview_handler.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\record_handler.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\record_handler.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/record_handler.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/record_handler.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\photo_handler.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\photo_handler.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/photo_handler.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/photo_handler.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/camera_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE -Dcamera_windows_plugin_EXPORTS @CMakeFiles/camera_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\camera_windows_plugin.dir\\texture_handler.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\camera_windows\\windows\\texture_handler.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/texture_handler.cpp",
+  "output": "plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/texture_handler.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/file_selector_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_HAS_EXCEPTIONS=1 -D_UNICODE -Dfile_selector_windows_plugin_EXPORTS @CMakeFiles/file_selector_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\file_selector_windows_plugin.dir\\file_selector_windows.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\file_selector_windows\\windows\\file_selector_windows.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/file_selector_windows.cpp",
+  "output": "plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/file_selector_windows.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/file_selector_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_HAS_EXCEPTIONS=1 -D_UNICODE -Dfile_selector_windows_plugin_EXPORTS @CMakeFiles/file_selector_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\file_selector_windows_plugin.dir\\file_dialog_controller.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\file_selector_windows\\windows\\file_dialog_controller.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/file_dialog_controller.cpp",
+  "output": "plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/file_dialog_controller.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/file_selector_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_HAS_EXCEPTIONS=1 -D_UNICODE -Dfile_selector_windows_plugin_EXPORTS @CMakeFiles/file_selector_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\file_selector_windows_plugin.dir\\file_selector_plugin.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\file_selector_windows\\windows\\file_selector_plugin.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/file_selector_plugin.cpp",
+  "output": "plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/file_selector_plugin.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/file_selector_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_HAS_EXCEPTIONS=1 -D_UNICODE -Dfile_selector_windows_plugin_EXPORTS @CMakeFiles/file_selector_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\file_selector_windows_plugin.dir\\messages.g.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\file_selector_windows\\windows\\messages.g.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/messages.g.cpp",
+  "output": "plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/messages.g.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/file_selector_windows",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_HAS_EXCEPTIONS=1 -D_UNICODE -Dfile_selector_windows_plugin_EXPORTS @CMakeFiles/file_selector_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\file_selector_windows_plugin.dir\\string_utils.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\file_selector_windows\\windows\\string_utils.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/string_utils.cpp",
+  "output": "plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/string_utils.cpp.obj"
+}
+]
