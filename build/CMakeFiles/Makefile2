@@ -269,8 +269,8 @@ flutter/CMakeFiles/flutter_assemble.dir/clean:
 # Target rules for target runner/CMakeFiles/flipmark.dir
 
 # All Build rule for target.
-runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_wrapper_app.dir/all
 runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
+runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_wrapper_app.dir/all
 runner/CMakeFiles/flipmark.dir/all: plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/all
 runner/CMakeFiles/flipmark.dir/all: plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/all
 	$(MAKE) $(MAKESILENT) -f runner\CMakeFiles\flipmark.dir\build.make runner/CMakeFiles/flipmark.dir/depend

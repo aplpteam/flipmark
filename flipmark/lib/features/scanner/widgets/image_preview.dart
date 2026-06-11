@@ -10,7 +10,7 @@ class ImagePreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 450,
+      width: 400,
       height: 500,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
@@ -31,7 +31,12 @@ class ImagePreview extends StatelessWidget {
 
                   if (snapshot.connectionState == ConnectionState.done &&
                       snapshot.hasData) {
-                    return Image.memory(snapshot.data!, fit: BoxFit.contain);
+                    return Image.memory(
+                      snapshot.data!,
+                      width: 300, // Force the image asset width
+                      height: 400,
+                      fit: BoxFit.cover,
+                    );
                     // Image.memory() stores the raw bytes (Uin8List)
                   }
 
