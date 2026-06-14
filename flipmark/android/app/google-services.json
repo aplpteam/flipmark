@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364168663175",
+    "project_id": "flipmark-f1165",
+    "storage_bucket": "flipmark-f1165.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364168663175:android:507b62ee3642d598116822",
+        "android_client_info": {
+          "package_name": "com.example.flipmark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwKbCAIQ_XTo_HwTaE8JU1aAA9TxuUOog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
