@@ -13,7 +13,7 @@ class AuthService {
           );
       return credential;
     } on FirebaseAuthException catch (e) {
-      throw Exception(_authMapError(e));
+        throw _authMapError(e);
     }
   }
 
@@ -47,10 +47,9 @@ class AuthService {
         return 'Email/password sign-in is not enabled.';
       //sign up errors
 
-      case 'user-not-found':
-        return 'No user found for this email.';
       case 'wrong-password':
-        return 'Incorrect password.';
+      case 'invalid-credential':
+        return "invalid email or password entered";
       case 'user-disabled':
         return 'This account has been disabled';
 
