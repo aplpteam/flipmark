@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\camera_windows_plugin.dir/objects.a
+C:\mingw\mingw64\bin\ar.exe qc CMakeFiles\camera_windows_plugin.dir/objects.a @CMakeFiles\camera_windows_plugin.dir\objects1.rsp
+C:\mingw\mingw64\bin\g++.exe -g -shared -o libcamera_windows_plugin.dll -Wl,--out-implib,libcamera_windows_plugin.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\camera_windows_plugin.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\camera_windows_plugin.dir\linkLibs.rsp
