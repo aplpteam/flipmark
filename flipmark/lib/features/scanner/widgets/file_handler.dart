@@ -6,8 +6,14 @@ class FileHandler extends StatelessWidget {
   // callback, var onFileSelected holds a function from scanner_page
 
   final bool hasFile;
+  final XFile? file;
 
-  FileHandler({super.key, required this.onFileSelected, required this.hasFile});
+  FileHandler({
+    super.key,
+    required this.onFileSelected,
+    required this.hasFile,
+    required this.file,
+  });
 
   final ImagePicker _picker = ImagePicker();
 
@@ -26,10 +32,10 @@ class FileHandler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
+    return (ElevatedButton.icon(
       onPressed: _pickFile,
       icon: const Icon(Icons.folder),
       label: Text(hasFile ? 'Change File' : 'Choose File'),
-    );
+    ));
   }
 }

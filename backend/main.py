@@ -6,12 +6,12 @@ import faiss
 from fastapi import FastAPI, UploadFile, File
 from sentence_transformers import SentenceTransformer
 from fastapi.middleware.cors import CORSMiddleware
-
-# 1. cd backend
-# 2. Activate
-# 3. uvicorn main:app --reload
-# 4. example query search: http://127.0.0.1:8000/similar?query=THE QUERY
-# 5. stop: ctrl+C or taskkill /IM python.exe /F
+from paddleocr import PaddleOCR
+# cd backend
+# .\venv\Scripts\activate
+# uvicorn main:app --reload
+# example query search: http://127.0.0.1:8000/similar?query=THE QUERY
+# stop: ctrl+C or taskkill /IM python.exe /F
 
 
 # -----------------------------
@@ -227,11 +227,38 @@ def similar_books(query: str, k: int = 5):
 
     return {"query": query, "results": results}
 
+
+
+# Initialize OCR once (fast)
+ocr = PaddleOCR(use_angle_cls=True, lang='en')
+
 @app.post("/upload_synopsis")
 async def upload_synopsis(file: UploadFile = File(...)):
-    content = await file.read()
-    synopsis = content.decode("utf-8")
-    return similar_books(query=synopsis, k=5)
+    try:
+        # Read uploaded file
+        contents = await file.read()
+
+        # Save temporarily
+        temp_path = f"temp_{file.filename}"
+        with open(temp_path, "wb") as f:
+            f.write(contents)
+
+        # Run OCR
+        result = ocr.ocr(temp_path, cls=True)
+
+        # Extract text lines
+        text_lines = []
+        for line in result[0]:
+            text_lines.append(line[1][0])
+
+        text = "\n".join(text_lines)
+
+        # Run similarity search
+        return similar_books(query=text, k=5)
+
+    except Exception as e:
+        print("UPLOAD ERROR:", e)
+        return {"error": str(e)}
 
 @app.get("/")
 def root():
