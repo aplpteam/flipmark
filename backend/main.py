@@ -7,6 +7,13 @@ from fastapi import FastAPI, UploadFile, File
 from sentence_transformers import SentenceTransformer
 from fastapi.middleware.cors import CORSMiddleware
 
+# 1. cd backend
+# 2. Activate
+# 3. uvicorn main:app --reload
+# 4. example query search: http://127.0.0.1:8000/similar?query=THE QUERY
+# 5. stop: ctrl+C or taskkill /IM python.exe /F
+
+
 # -----------------------------
 # Load model, index, metadata
 # -----------------------------
@@ -39,63 +46,181 @@ def is_fiction_category(cat: str):
 
 @app.get("/similar")
 def similar_books(query: str, k: int = 5):
+    import re
+    import math
+
+    def normalize_title(title: str):
+        """Normalize titles to prevent duplicates across editions/volumes."""
+        title = title.lower().strip()
+
+        # remove subtitles after colon, dash, comma, parentheses
+        title = re.split(r'[:\-,(]', title)[0]
+
+        # remove volume/edition markers
+        title = re.sub(r'\b(book|volume|vol|edition|ed|part|issue)\s*\d+\b', '', title)
+
+        # collapse whitespace
+        title = re.sub(r'\s+', ' ', title).strip()
+
+        return title
+
+    def is_combo_edition(title: str):
+        """
+        Detect omnibus editions like:
+        - 'Animal Farm and 1984'
+        - '1984 and Animal Farm'
+        - 'Lord of the Rings and The Hobbit'
+        - 'The Invisibles and The Invisible Kingdom'
+        """
+        return bool(re.search(
+            r'([A-Z0-9][A-Za-z0-9]+.*)\s(and|&|/|;)\s+([A-Z0-9][A-Za-z0-9]+)',
+            title
+        ))
+
     embedding = model.encode([query], convert_to_numpy=True)
     distances, indices = index.search(embedding, 1000)
 
     results = []
     seen_titles = set()
 
+    # Detect dystopian queries
+    DYSTOPIAN_QUERY_KEYWORDS = [
+        "totalitarian", "authoritarian", "dictatorship", "regime",
+        "surveillance", "oppression", "dystopia", "dystopian",
+        "control", "propaganda", "censorship"
+    ]
+    query_lower = query.lower()
+    query_is_dystopian = any(word in query_lower for word in DYSTOPIAN_QUERY_KEYWORDS)
+
+    # Canonical dystopian books to always allow
+    DYSTOPIAN_CLASSICS = [
+        "1984", "animal farm", "fahrenheit 451",
+        "brave new world", "the handmaid's tale"
+    ]
+
+    HIGH_SIMILARITY_THRESHOLD = 1.30
+
     for idx, dist in zip(indices[0], distances[0]):
         row = metadata.iloc[idx].to_dict()
 
         title = (row.get("title") or "").strip()
         title_lower = title.lower()
+        normalized = normalize_title(title)
         category = str(row.get("categories", "")).lower()
         desc = (row.get("description") or "").lower()
 
+        # ---------------------------------------------------------
+        # 2. BLOCK COMBO EDITIONS
+        # ---------------------------------------------------------
+        if is_combo_edition(row.get("title", "")):
+            continue
+
+        # ---------------------------------------------------------
+        # 3. BLOCK DUPLICATES
+        # ---------------------------------------------------------
+        if normalized in seen_titles:
+            continue
+
+        # ---------------------------------------------------------
+        # 5. DYSTOPIAN CLASSIC OVERRIDE
+        # ---------------------------------------------------------
+        if query_is_dystopian and any(c in title_lower for c in DYSTOPIAN_CLASSICS):
+
+            # Clean NaN metadata
+            for key, value in row.items():
+                if isinstance(value, float) and math.isnan(value):
+                    row[key] = None
+
+            # Clean NaN distance
+            if isinstance(dist, float) and math.isnan(dist):
+                dist = None
+            else:
+                dist = float(dist)
+
+            results.append({
+                "title": row.get("title"),
+                "authors": row.get("authors"),
+                "categories": row.get("categories"),
+                "thumbnail": row.get("thumbnail"),
+                "description": row.get("description"),
+                "distance": dist
+            })
+            seen_titles.add(normalized)
+            if len(results) == k:
+                break
+            continue
+
+        # ---------------------------------------------------------
+        # 6. NONFICTION FILTERS
+        # ---------------------------------------------------------
         NONFICTION_CATEGORIES = [
             "essays", "biography", "autobiography", "memoir", "history",
-            "political science", "language arts", "criticism", "philosophy",
+            "language arts", "criticism", "philosophy",
             "social science", "literary collections", "literary criticism"
         ]
-        if any(bad in category for bad in NONFICTION_CATEGORIES):
-            continue
+
+        looks_nonfiction = any(bad in category for bad in NONFICTION_CATEGORIES)
+
+        if "political science" in category and not query_is_dystopian:
+            looks_nonfiction = True
 
         NONFICTION_DESCRIPTION_KEYWORDS = [
             "essays", "letters", "pamphlets", "journalism", "reportage",
             "autobiographical", "memoir", "biographical", "experience of",
             "analysis", "commentary", "criticism", "historical", "civil war"
         ]
-        if any(bad in desc for bad in NONFICTION_DESCRIPTION_KEYWORDS):
-            continue
+        desc_nonfiction = any(bad in desc for bad in NONFICTION_DESCRIPTION_KEYWORDS)
 
+        if looks_nonfiction or desc_nonfiction:
+            if dist > HIGH_SIMILARITY_THRESHOLD:
+                continue
+
+        # ---------------------------------------------------------
+        # 7. FICTION DETECTION
+        # ---------------------------------------------------------
         description_says_fiction = any(
-            keyword in desc for keyword in ["novel", "story", "dystopian", "utopian", "narrative", "tale", "classic", "allegory"]
+            keyword in desc for keyword in [
+                "novel", "story", "dystopian", "utopian",
+                "narrative", "tale", "classic", "allegory"
+            ]
         )
         category_says_fiction = is_fiction_category(category)
+
+        if query_is_dystopian:
+            if any(word in desc for word in ["novel", "story", "classic", "dystopian", "allegory"]):
+                category_says_fiction = True
 
         if not (category_says_fiction or description_says_fiction):
             continue
 
-        if " and " in title_lower:
-            continue
-
-        if title_lower in seen_titles:
-            continue
-        seen_titles.add(title_lower)
-
+        # ---------------------------------------------------------
+        # 8. CLEAN METADATA NaNs
+        # ---------------------------------------------------------
         for key, value in row.items():
             if isinstance(value, float) and math.isnan(value):
                 row[key] = None
 
+        # ---------------------------------------------------------
+        # 9. CLEAN DISTANCE NaN
+        # ---------------------------------------------------------
+        if isinstance(dist, float) and math.isnan(dist):
+            dist = None
+        else:
+            dist = float(dist)
+
+        # ---------------------------------------------------------
+        # 10. ADD RESULT
+        # ---------------------------------------------------------
         results.append({
             "title": row.get("title"),
             "authors": row.get("authors"),
             "categories": row.get("categories"),
             "thumbnail": row.get("thumbnail"),
             "description": row.get("description"),
-            "distance": float(dist)
+            "distance": dist
         })
+
+        seen_titles.add(normalized)
 
         if len(results) == k:
             break
