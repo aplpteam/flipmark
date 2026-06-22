@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/projects/flipmark/flipmark/windows"
+    "cmake.sourceDirectory": "C:/projects/flipmark/flipmark/windows",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
