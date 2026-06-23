@@ -33,15 +33,18 @@ app.add_middleware(
 
 def is_fiction_category(cat: str):
     cat = cat.lower()
+
+    # Hard block nonfiction
     if "nonfiction" in cat or "non-fiction" in cat:
         return False
 
     FICTION_KEYWORDS = [
-        "fiction", "novel", "fantasy", "romance", "thriller", "mystery",
-        "horror", "science fiction", "literary fiction", "young adult",
-        "juvenile fiction", "dystopia", "dystopian", "classic", "literature",
-        "satire", "allegory"
+        "fiction", "novel", "fantasy", "romance", "thriller",
+        "mystery", "horror", "science fiction", "literary fiction",
+        "young adult", "juvenile fiction", "dystopia", "dystopian",
+        "classic", "literature", "satire", "allegory"
     ]
+
     return any(keyword in cat for keyword in FICTION_KEYWORDS)
 
 @app.get("/similar")
@@ -87,7 +90,7 @@ def similar_books(query: str, k: int = 5):
     DYSTOPIAN_QUERY_KEYWORDS = [
         "totalitarian", "authoritarian", "dictatorship", "regime",
         "surveillance", "oppression", "dystopia", "dystopian",
-        "control", "propaganda", "censorship"
+        "control", "propaganda", "censorship",
     ]
     query_lower = query.lower()
     query_is_dystopian = any(word in query_lower for word in DYSTOPIAN_QUERY_KEYWORDS)
@@ -150,30 +153,25 @@ def similar_books(query: str, k: int = 5):
                 break
             continue
 
-        # ---------------------------------------------------------
-        # 6. NONFICTION FILTERS
-        # ---------------------------------------------------------
-        NONFICTION_CATEGORIES = [
-            "essays", "biography", "autobiography", "memoir", "history",
-            "language arts", "criticism", "philosophy",
-            "social science", "literary collections", "literary criticism"
+            # ---------------------------------------------------------
+            # STRICT NONFICTION BLOCKER
+            # ---------------------------------------------------------
+        NONFICTION_TERMS = [
+            "nonfiction", "non-fiction", "biography", "autobiography",
+            "memoir", "essays", "history", "juvenile nonfiction",
+            "juvenile non-fiction", "criticism", "analysis",
+            "commentary", "letters", "journalism", "reportage",
+            "literary criticism", "literary collections",
+            "political science", "social science"
         ]
 
-        looks_nonfiction = any(bad in category for bad in NONFICTION_CATEGORIES)
+        # If ANY nonfiction term appears in category or description → block it
+        if any(term in category for term in NONFICTION_TERMS):
+            continue
 
-        if "political science" in category and not query_is_dystopian:
-            looks_nonfiction = True
+        if any(term in desc for term in NONFICTION_TERMS):
+            continue
 
-        NONFICTION_DESCRIPTION_KEYWORDS = [
-            "essays", "letters", "pamphlets", "journalism", "reportage",
-            "autobiographical", "memoir", "biographical", "experience of",
-            "analysis", "commentary", "criticism", "historical", "civil war"
-        ]
-        desc_nonfiction = any(bad in desc for bad in NONFICTION_DESCRIPTION_KEYWORDS)
-
-        if looks_nonfiction or desc_nonfiction:
-            if dist > HIGH_SIMILARITY_THRESHOLD:
-                continue
 
         # ---------------------------------------------------------
         # 7. FICTION DETECTION
