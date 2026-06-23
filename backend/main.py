@@ -1,12 +1,13 @@
 import math
 import pickle
 import sqlite3
-import pandas as pd # Ensure pandas is imported if metadata is a DataFrame
+import pandas as pd
 import faiss
 from fastapi import FastAPI, UploadFile, File
 from sentence_transformers import SentenceTransformer
 from fastapi.middleware.cors import CORSMiddleware
 from paddleocr import PaddleOCR
+
 # cd backend
 # .\venv\Scripts\activate
 # uvicorn main:app --reload
@@ -53,8 +54,28 @@ def similar_books(query: str, k: int = 5):
     import math
 
     def normalize_title(title: str):
-        """Normalize titles to prevent duplicates across editions/volumes."""
         title = title.lower().strip()
+
+        # remove possessive author prefixes:
+        # "ray bradbury's fahrenheit 451" → "fahrenheit 451"
+        title = re.sub(r"^[a-z\s']+?'s\s+", "", title)
+
+        # remove study-guide prefixes
+        GUIDE_PREFIXES = [
+            r"cliffsnotes on ",
+            r"sparknotes on ",
+            r"summary of ",
+            r"study guide: ",
+            r"study guide to ",
+            r"analysis of ",
+            r"critical essays on ",
+            r"critical interpretations of ",
+            r"bloom['’]s notes[: ]*",
+            r"bloom['’]s modern critical interpretations[: ]*",
+            r"modern critical interpretations[: ]*",
+        ]
+        for p in GUIDE_PREFIXES:
+            title = re.sub(rf"^{p}", "", title)
 
         # remove subtitles after colon, dash, comma, parentheses
         title = re.split(r'[:\-,(]', title)[0]
@@ -66,6 +87,7 @@ def similar_books(query: str, k: int = 5):
         title = re.sub(r'\s+', ' ', title).strip()
 
         return title
+
 
     def is_combo_edition(title: str):
         """
@@ -123,6 +145,27 @@ def similar_books(query: str, k: int = 5):
         # ---------------------------------------------------------
         if normalized in seen_titles:
             continue
+        
+        # ---------------------------------------------------------
+        # STRICT NONFICTION BLOCKER (including juvenile nonfiction)
+        # ---------------------------------------------------------
+        NONFICTION_TERMS = [
+            "nonfiction", "non-fiction",
+            "juvenile nonfiction", "juvenile non-fiction",
+            "biography", "autobiography", "memoir",
+            "essays", "history", "criticism", "analysis",
+            "commentary", "letters", "journalism", "reportage",
+            "literary criticism", "literary collections",
+            "political science", "social science",
+            "psychology", "psychiatry", "self-help", "self help",
+            "mental health", "cognitive science", "behavioral science"
+        ]
+
+        if any(term in category for term in NONFICTION_TERMS):
+            continue
+
+        if any(term in desc for term in NONFICTION_TERMS):
+            continue
 
         # ---------------------------------------------------------
         # 5. DYSTOPIAN CLASSIC OVERRIDE
@@ -152,27 +195,6 @@ def similar_books(query: str, k: int = 5):
             if len(results) == k:
                 break
             continue
-
-            # ---------------------------------------------------------
-            # STRICT NONFICTION BLOCKER
-            # ---------------------------------------------------------
-        NONFICTION_TERMS = [
-            "nonfiction", "non-fiction", "biography", "autobiography",
-            "memoir", "essays", "history", "juvenile nonfiction",
-            "juvenile non-fiction", "criticism", "analysis",
-            "commentary", "letters", "journalism", "reportage",
-            "literary criticism", "literary collections",
-            "political science", "social science"
-        ]
-
-        # If ANY nonfiction term appears in category or description → block it
-        if any(term in category for term in NONFICTION_TERMS):
-            continue
-
-        if any(term in desc for term in NONFICTION_TERMS):
-            continue
-
-
         # ---------------------------------------------------------
         # 7. FICTION DETECTION
         # ---------------------------------------------------------
