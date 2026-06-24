@@ -12,7 +12,6 @@ backend/venv/
 *.dll
 *.so
 *.dylib
-*.pyd
 *.whl
 
 # --- PaddleOCR / PyTorch / OpenCV caches ---
@@ -24,13 +23,19 @@ backend/venv/
 .env
 
 # --- Build / packaging ---
-build/
 dist/
 *.egg-info/
 
 # --- SQLite databases (optional) ---
 # comment out if you want to track your DB
 *.db
+
+# --- Flutter ---
+build/
+.flutter-plugins-dependencies
+.dart_tool/
+.pub-cache/
+.pub/
 
 # --- IDE / editor ---
 .vscode/
