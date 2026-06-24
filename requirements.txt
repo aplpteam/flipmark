@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+paddlepaddle==2.5.1
+paddleocr
+sentence-transformers
+faiss-cpu
+numpy
+pandas
+python-multipart
+Pillow
+opencv-python
+scikit-learn
