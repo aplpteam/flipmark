@@ -238,6 +238,32 @@ file_selector_windows_plugin/fast:
 	$(MAKE) $(MAKESILENT) -f plugins\file_selector_windows\CMakeFiles\file_selector_windows_plugin.dir\build.make plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/build
 .PHONY : file_selector_windows_plugin/fast
 
+#=============================================================================
+# Target rules for targets named firebase_auth_plugin
+
+# Build rule for target.
+firebase_auth_plugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 firebase_auth_plugin
+.PHONY : firebase_auth_plugin
+
+# fast build rule for target.
+firebase_auth_plugin/fast:
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_auth\CMakeFiles\firebase_auth_plugin.dir\build.make plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/build
+.PHONY : firebase_auth_plugin/fast
+
+#=============================================================================
+# Target rules for targets named firebase_core_plugin
+
+# Build rule for target.
+firebase_core_plugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 firebase_core_plugin
+.PHONY : firebase_core_plugin
+
+# fast build rule for target.
+firebase_core_plugin/fast:
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_core\CMakeFiles\firebase_core_plugin.dir\build.make plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/build
+.PHONY : firebase_core_plugin/fast
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -253,6 +279,8 @@ help:
 	@echo ... flutter_assemble
 	@echo ... camera_windows_plugin
 	@echo ... file_selector_windows_plugin
+	@echo ... firebase_auth_plugin
+	@echo ... firebase_core_plugin
 	@echo ... flipmark
 	@echo ... flutter_wrapper_app
 	@echo ... flutter_wrapper_plugin

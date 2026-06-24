@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flipmark/features/home/home_page.dart';
 import 'package:flipmark/features/auth/login_page.dart';
-import 'package:flipmark/features/auth/signup_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

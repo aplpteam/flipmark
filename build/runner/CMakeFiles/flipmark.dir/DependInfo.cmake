@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_RC
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_RC
+  "FLUTTER_PLUGIN_IMPL"
   "FLUTTER_VERSION=\"1.0.0+1\""
   "FLUTTER_VERSION_BUILD=1"
   "FLUTTER_VERSION_MAJOR=1"
@@ -32,6 +33,9 @@ set(CMAKE_RC_TARGET_INCLUDE_PATH
   "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/cpp_client_wrapper/include"
   "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/camera_windows/windows/include"
   "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/include"
+  "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_auth/windows/include"
+  "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/windows/include"
+  "extracted/firebase_cpp_sdk_windows/include"
   )
 
 # The set of dependency files which are needed:

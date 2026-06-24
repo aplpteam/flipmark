@@ -66,6 +66,8 @@ all: flutter/all
 all: runner/all
 all: plugins/camera_windows/all
 all: plugins/file_selector_windows/all
+all: plugins/firebase_auth/all
+all: plugins/firebase_core/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -73,6 +75,8 @@ codegen: flutter/codegen
 codegen: runner/codegen
 codegen: plugins/camera_windows/codegen
 codegen: plugins/file_selector_windows/codegen
+codegen: plugins/firebase_auth/codegen
+codegen: plugins/firebase_core/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -80,6 +84,8 @@ preinstall: flutter/preinstall
 preinstall: runner/preinstall
 preinstall: plugins/camera_windows/preinstall
 preinstall: plugins/file_selector_windows/preinstall
+preinstall: plugins/firebase_auth/preinstall
+preinstall: plugins/firebase_core/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -87,6 +93,8 @@ clean: flutter/clean
 clean: runner/clean
 clean: plugins/camera_windows/clean
 clean: plugins/file_selector_windows/clean
+clean: plugins/firebase_auth/clean
+clean: plugins/firebase_core/clean
 .PHONY : clean
 
 #=============================================================================
@@ -151,6 +159,64 @@ plugins/file_selector_windows/clean: plugins/file_selector_windows/CMakeFiles/fi
 .PHONY : plugins/file_selector_windows/clean
 
 #=============================================================================
+# Directory level rules for directory plugins/firebase_auth
+
+# Recursive "all" directory target.
+plugins/firebase_auth/all: plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all
+.PHONY : plugins/firebase_auth/all
+
+# Recursive "codegen" directory target.
+plugins/firebase_auth/codegen: plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/codegen
+.PHONY : plugins/firebase_auth/codegen
+
+# Recursive "preinstall" directory target.
+plugins/firebase_auth/preinstall:
+.PHONY : plugins/firebase_auth/preinstall
+
+# Recursive "clean" directory target.
+plugins/firebase_auth/clean: plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/clean
+.PHONY : plugins/firebase_auth/clean
+
+#=============================================================================
+# Directory level rules for directory plugins/firebase_core
+
+# Recursive "all" directory target.
+plugins/firebase_core/all: plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all
+.PHONY : plugins/firebase_core/all
+
+# Recursive "codegen" directory target.
+plugins/firebase_core/codegen: plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/codegen
+.PHONY : plugins/firebase_core/codegen
+
+# Recursive "preinstall" directory target.
+plugins/firebase_core/preinstall:
+.PHONY : plugins/firebase_core/preinstall
+
+# Recursive "clean" directory target.
+plugins/firebase_core/clean: plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/clean
+plugins/firebase_core/clean: plugins/firebase_core/bin/clean
+.PHONY : plugins/firebase_core/clean
+
+#=============================================================================
+# Directory level rules for directory plugins/firebase_core/bin
+
+# Recursive "all" directory target.
+plugins/firebase_core/bin/all:
+.PHONY : plugins/firebase_core/bin/all
+
+# Recursive "codegen" directory target.
+plugins/firebase_core/bin/codegen:
+.PHONY : plugins/firebase_core/bin/codegen
+
+# Recursive "preinstall" directory target.
+plugins/firebase_core/bin/preinstall:
+.PHONY : plugins/firebase_core/bin/preinstall
+
+# Recursive "clean" directory target.
+plugins/firebase_core/bin/clean:
+.PHONY : plugins/firebase_core/bin/clean
+
+#=============================================================================
 # Directory level rules for directory runner
 
 # Recursive "all" directory target.
@@ -176,7 +242,7 @@ runner/clean: runner/CMakeFiles/flipmark.dir/clean
 flutter/CMakeFiles/flutter_wrapper_plugin.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_wrapper_plugin.dir\build.make flutter/CMakeFiles/flutter_wrapper_plugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_wrapper_plugin.dir\build.make flutter/CMakeFiles/flutter_wrapper_plugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=34,35,36,37,38 "Built target flutter_wrapper_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=43,44,45,46,47 "Built target flutter_wrapper_plugin"
 .PHONY : flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
 
 # Build rule for subdir invocation for target.
@@ -193,7 +259,7 @@ flutter_wrapper_plugin: flutter/CMakeFiles/flutter_wrapper_plugin.dir/rule
 # codegen rule for target.
 flutter/CMakeFiles/flutter_wrapper_plugin.dir/codegen: flutter/CMakeFiles/flutter_assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_wrapper_plugin.dir\build.make flutter/CMakeFiles/flutter_wrapper_plugin.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=34,35,36,37,38 "Finished codegen for target flutter_wrapper_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=43,44,45,46,47 "Finished codegen for target flutter_wrapper_plugin"
 .PHONY : flutter/CMakeFiles/flutter_wrapper_plugin.dir/codegen
 
 # clean rule for target.
@@ -208,7 +274,7 @@ flutter/CMakeFiles/flutter_wrapper_plugin.dir/clean:
 flutter/CMakeFiles/flutter_wrapper_app.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_wrapper_app.dir\build.make flutter/CMakeFiles/flutter_wrapper_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_wrapper_app.dir\build.make flutter/CMakeFiles/flutter_wrapper_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=28,29,30,31,32,33 "Built target flutter_wrapper_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=37,38,39,40,41,42 "Built target flutter_wrapper_app"
 .PHONY : flutter/CMakeFiles/flutter_wrapper_app.dir/all
 
 # Build rule for subdir invocation for target.
@@ -225,7 +291,7 @@ flutter_wrapper_app: flutter/CMakeFiles/flutter_wrapper_app.dir/rule
 # codegen rule for target.
 flutter/CMakeFiles/flutter_wrapper_app.dir/codegen: flutter/CMakeFiles/flutter_assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_wrapper_app.dir\build.make flutter/CMakeFiles/flutter_wrapper_app.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=28,29,30,31,32,33 "Finished codegen for target flutter_wrapper_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=37,38,39,40,41,42 "Finished codegen for target flutter_wrapper_app"
 .PHONY : flutter/CMakeFiles/flutter_wrapper_app.dir/codegen
 
 # clean rule for target.
@@ -240,7 +306,7 @@ flutter/CMakeFiles/flutter_wrapper_app.dir/clean:
 flutter/CMakeFiles/flutter_assemble.dir/all:
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_assemble.dir\build.make flutter/CMakeFiles/flutter_assemble.dir/depend
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_assemble.dir\build.make flutter/CMakeFiles/flutter_assemble.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=27 "Built target flutter_assemble"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=36 "Built target flutter_assemble"
 .PHONY : flutter/CMakeFiles/flutter_assemble.dir/all
 
 # Build rule for subdir invocation for target.
@@ -257,7 +323,7 @@ flutter_assemble: flutter/CMakeFiles/flutter_assemble.dir/rule
 # codegen rule for target.
 flutter/CMakeFiles/flutter_assemble.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f flutter\CMakeFiles\flutter_assemble.dir\build.make flutter/CMakeFiles/flutter_assemble.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=27 "Finished codegen for target flutter_assemble"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=36 "Finished codegen for target flutter_assemble"
 .PHONY : flutter/CMakeFiles/flutter_assemble.dir/codegen
 
 # clean rule for target.
@@ -269,18 +335,21 @@ flutter/CMakeFiles/flutter_assemble.dir/clean:
 # Target rules for target runner/CMakeFiles/flipmark.dir
 
 # All Build rule for target.
-runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_wrapper_app.dir/all
-runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
-runner/CMakeFiles/flipmark.dir/all: plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/all
 runner/CMakeFiles/flipmark.dir/all: plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/all
+runner/CMakeFiles/flipmark.dir/all: plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all
+runner/CMakeFiles/flipmark.dir/all: plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all
+runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
+runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
+runner/CMakeFiles/flipmark.dir/all: flutter/CMakeFiles/flutter_wrapper_app.dir/all
+runner/CMakeFiles/flipmark.dir/all: plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/all
 	$(MAKE) $(MAKESILENT) -f runner\CMakeFiles\flipmark.dir\build.make runner/CMakeFiles/flipmark.dir/depend
 	$(MAKE) $(MAKESILENT) -f runner\CMakeFiles\flipmark.dir\build.make runner/CMakeFiles/flipmark.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=20,21,22,23,24,25,26 "Built target flipmark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=29,30,31,32,33,34,35 "Built target flipmark"
 .PHONY : runner/CMakeFiles/flipmark.dir/all
 
 # Build rule for subdir invocation for target.
 runner/CMakeFiles/flipmark.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 47
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 runner/CMakeFiles/flipmark.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 0
 .PHONY : runner/CMakeFiles/flipmark.dir/rule
@@ -292,7 +361,7 @@ flipmark: runner/CMakeFiles/flipmark.dir/rule
 # codegen rule for target.
 runner/CMakeFiles/flipmark.dir/codegen: flutter/CMakeFiles/flutter_assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f runner\CMakeFiles\flipmark.dir\build.make runner/CMakeFiles/flipmark.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=20,21,22,23,24,25,26 "Finished codegen for target flipmark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=29,30,31,32,33,34,35 "Finished codegen for target flipmark"
 .PHONY : runner/CMakeFiles/flipmark.dir/codegen
 
 # clean rule for target.
@@ -304,8 +373,8 @@ runner/CMakeFiles/flipmark.dir/clean:
 # Target rules for target plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir
 
 # All Build rule for target.
-plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
 plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
+plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
 	$(MAKE) $(MAKESILENT) -f plugins\camera_windows\CMakeFiles\camera_windows_plugin.dir\build.make plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f plugins\camera_windows\CMakeFiles\camera_windows_plugin.dir\build.make plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target camera_windows_plugin"
@@ -337,8 +406,8 @@ plugins/camera_windows/CMakeFiles/camera_windows_plugin.dir/clean:
 # Target rules for target plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir
 
 # All Build rule for target.
-plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
 plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
+plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
 	$(MAKE) $(MAKESILENT) -f plugins\file_selector_windows\CMakeFiles\file_selector_windows_plugin.dir\build.make plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f plugins\file_selector_windows\CMakeFiles\file_selector_windows_plugin.dir\build.make plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=14,15,16,17,18,19 "Built target file_selector_windows_plugin"
@@ -365,6 +434,73 @@ plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/codege
 plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/clean:
 	$(MAKE) $(MAKESILENT) -f plugins\file_selector_windows\CMakeFiles\file_selector_windows_plugin.dir\build.make plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/clean
 .PHONY : plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/clean
+
+#=============================================================================
+# Target rules for target plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir
+
+# All Build rule for target.
+plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all: plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all
+plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
+plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_auth\CMakeFiles\firebase_auth_plugin.dir\build.make plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_auth\CMakeFiles\firebase_auth_plugin.dir\build.make plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=20,21,22,23 "Built target firebase_auth_plugin"
+.PHONY : plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all
+
+# Build rule for subdir invocation for target.
+plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 15
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 0
+.PHONY : plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/rule
+
+# Convenience name for target.
+firebase_auth_plugin: plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/rule
+.PHONY : firebase_auth_plugin
+
+# codegen rule for target.
+plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_auth\CMakeFiles\firebase_auth_plugin.dir\build.make plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=20,21,22,23 "Finished codegen for target firebase_auth_plugin"
+.PHONY : plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/codegen
+
+# clean rule for target.
+plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_auth\CMakeFiles\firebase_auth_plugin.dir\build.make plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/clean
+.PHONY : plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/clean
+
+#=============================================================================
+# Target rules for target plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir
+
+# All Build rule for target.
+plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all: flutter/CMakeFiles/flutter_assemble.dir/all
+plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all: flutter/CMakeFiles/flutter_wrapper_plugin.dir/all
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_core\CMakeFiles\firebase_core_plugin.dir\build.make plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_core\CMakeFiles\firebase_core_plugin.dir\build.make plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=24,25,26,27,28 "Built target firebase_core_plugin"
+.PHONY : plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all
+
+# Build rule for subdir invocation for target.
+plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\projects\flipmark\build\CMakeFiles 0
+.PHONY : plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/rule
+
+# Convenience name for target.
+firebase_core_plugin: plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/rule
+.PHONY : firebase_core_plugin
+
+# codegen rule for target.
+plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_core\CMakeFiles\firebase_core_plugin.dir\build.make plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\projects\flipmark\build\CMakeFiles --progress-num=24,25,26,27,28 "Finished codegen for target firebase_core_plugin"
+.PHONY : plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/codegen
+
+# clean rule for target.
+plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins\firebase_core\CMakeFiles\firebase_core_plugin.dir\build.make plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/clean
+.PHONY : plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

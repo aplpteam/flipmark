@@ -5,7 +5,10 @@
 		"C:/projects/flipmark/build/flutter/cmake_install.cmake",
 		"C:/projects/flipmark/build/runner/cmake_install.cmake",
 		"C:/projects/flipmark/build/plugins/camera_windows/cmake_install.cmake",
-		"C:/projects/flipmark/build/plugins/file_selector_windows/cmake_install.cmake"
+		"C:/projects/flipmark/build/plugins/file_selector_windows/cmake_install.cmake",
+		"C:/projects/flipmark/build/plugins/firebase_auth/cmake_install.cmake",
+		"C:/projects/flipmark/build/plugins/firebase_core/cmake_install.cmake",
+		"C:/projects/flipmark/build/plugins/firebase_core/bin/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

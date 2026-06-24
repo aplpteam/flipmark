@@ -173,6 +173,11 @@ runner/flipmark.exe: runner/CMakeFiles/flipmark.dir/build.make
 runner/flipmark.exe: flutter/libflutter_wrapper_app.a
 runner/flipmark.exe: plugins/camera_windows/libcamera_windows_plugin.dll.a
 runner/flipmark.exe: plugins/file_selector_windows/libfile_selector_windows_plugin.dll.a
+runner/flipmark.exe: plugins/firebase_auth/libfirebase_auth_plugin.a
+runner/flipmark.exe: plugins/firebase_core/libfirebase_core_plugin.a
+runner/flipmark.exe: extracted/firebase_cpp_sdk_windows/libs/linux/x86_64/cxx11/libfirebase_app.a
+runner/flipmark.exe: extracted/firebase_cpp_sdk_windows/libs/linux/x86_64/cxx11/libfirebase_auth.a
+runner/flipmark.exe: flutter/libflutter_wrapper_plugin.a
 runner/flipmark.exe: C:/projects/flipmark/flipmark/windows/flutter/ephemeral/flutter_windows.dll.lib
 runner/flipmark.exe: C:/projects/flipmark/flipmark/windows/runner/runner.exe.manifest
 runner/flipmark.exe: runner/CMakeFiles/flipmark.dir/linkLibs.rsp

@@ -1,14 +1,41 @@
-# Python venv
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environments ---
 venv/
 backend/venv/
 
-# Large ML wheels
+# --- Machine learning binaries ---
+*.dll
+*.so
+*.dylib
+*.pyd
 *.whl
 
-# Compiled binaries
-*.dll
-*.pyd
-
-# PaddleOCR caches
+# --- PaddleOCR / PyTorch / OpenCV caches ---
 *.pdmodel
 *.pdiparams
+*.onnx
+
+# --- Environment files ---
+.env
+
+# --- Build / packaging ---
+build/
+dist/
+*.egg-info/
+
+# --- SQLite databases (optional) ---
+# comment out if you want to track your DB
+*.db
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db

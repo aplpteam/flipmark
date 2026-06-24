@@ -222,6 +222,21 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+FirebasePrebuilt_BINARY_DIR:STATIC=C:/projects/flipmark/build/plugins/firebase_core/bin
+
+//Value Computed by CMake
+FirebasePrebuilt_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+FirebasePrebuilt_SOURCE_DIR:STATIC=C:/projects/flipmark/build/extracted/firebase_cpp_sdk_windows
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
+
+//Value Computed by CMake
 camera_windows_BINARY_DIR:STATIC=C:/projects/flipmark/build/plugins/camera_windows
 
 //Value Computed by CMake
@@ -238,6 +253,24 @@ file_selector_windows_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 file_selector_windows_SOURCE_DIR:STATIC=C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows
+
+//Value Computed by CMake
+firebase_auth_BINARY_DIR:STATIC=C:/projects/flipmark/build/plugins/firebase_auth
+
+//Value Computed by CMake
+firebase_auth_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+firebase_auth_SOURCE_DIR:STATIC=C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_auth/windows
+
+//Value Computed by CMake
+firebase_core_BINARY_DIR:STATIC=C:/projects/flipmark/build/plugins/firebase_core
+
+//Value Computed by CMake
+firebase_core_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+firebase_core_SOURCE_DIR:STATIC=C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/windows
 
 //Value Computed by CMake
 flipmark_BINARY_DIR:STATIC=C:/projects/flipmark/build
@@ -348,7 +381,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -404,4 +437,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_TAPI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 

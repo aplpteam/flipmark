@@ -43,31 +43,31 @@
 },
 {
   "directory": "C:/projects/flipmark/build/runner",
-  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\flutter_window.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\flutter_window.cpp",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\flutter_window.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\flutter_window.cpp",
   "file": "C:/projects/flipmark/flipmark/windows/runner/flutter_window.cpp",
   "output": "runner/CMakeFiles/flipmark.dir/flutter_window.cpp.obj"
 },
 {
   "directory": "C:/projects/flipmark/build/runner",
-  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\main.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\main.cpp",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\main.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\main.cpp",
   "file": "C:/projects/flipmark/flipmark/windows/runner/main.cpp",
   "output": "runner/CMakeFiles/flipmark.dir/main.cpp.obj"
 },
 {
   "directory": "C:/projects/flipmark/build/runner",
-  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\utils.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\utils.cpp",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\utils.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\utils.cpp",
   "file": "C:/projects/flipmark/flipmark/windows/runner/utils.cpp",
   "output": "runner/CMakeFiles/flipmark.dir/utils.cpp.obj"
 },
 {
   "directory": "C:/projects/flipmark/build/runner",
-  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\win32_window.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\win32_window.cpp",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\win32_window.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\runner\\win32_window.cpp",
   "file": "C:/projects/flipmark/flipmark/windows/runner/win32_window.cpp",
   "output": "runner/CMakeFiles/flipmark.dir/win32_window.cpp.obj"
 },
 {
   "directory": "C:/projects/flipmark/build/runner",
-  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\__\\flutter\\generated_plugin_registrant.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\generated_plugin_registrant.cc",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DFLUTTER_VERSION=\\\"1.0.0+1\\\" -DFLUTTER_VERSION_BUILD=1 -DFLUTTER_VERSION_MAJOR=1 -DFLUTTER_VERSION_MINOR=0 -DFLUTTER_VERSION_PATCH=0 -DNOMINMAX -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/flipmark.dir/includes_CXX.rsp -g /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\flipmark.dir\\__\\flutter\\generated_plugin_registrant.cc.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\generated_plugin_registrant.cc",
   "file": "C:/projects/flipmark/flipmark/windows/flutter/generated_plugin_registrant.cc",
   "output": "runner/CMakeFiles/flipmark.dir/__/flutter/generated_plugin_registrant.cc.obj"
 },
@@ -172,5 +172,47 @@
   "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_HAS_EXCEPTIONS=1 -D_UNICODE -Dfile_selector_windows_plugin_EXPORTS @CMakeFiles/file_selector_windows_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\file_selector_windows_plugin.dir\\string_utils.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\file_selector_windows\\windows\\string_utils.cpp",
   "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/windows/string_utils.cpp",
   "output": "plugins/file_selector_windows/CMakeFiles/file_selector_windows_plugin.dir/string_utils.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_auth",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_auth_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_auth_plugin.dir\\firebase_auth_plugin_c_api.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_auth\\windows\\firebase_auth_plugin_c_api.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_auth/windows/firebase_auth_plugin_c_api.cpp",
+  "output": "plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/firebase_auth_plugin_c_api.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_auth",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_auth_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_auth_plugin.dir\\firebase_auth_plugin.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_auth\\windows\\firebase_auth_plugin.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_auth/windows/firebase_auth_plugin.cpp",
+  "output": "plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/firebase_auth_plugin.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_auth",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_auth_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_auth_plugin.dir\\messages.g.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_auth\\windows\\messages.g.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_auth/windows/messages.g.cpp",
+  "output": "plugins/firebase_auth/CMakeFiles/firebase_auth_plugin.dir/messages.g.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_core",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_core_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_core_plugin.dir\\firebase_core_plugin_c_api.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_core\\windows\\firebase_core_plugin_c_api.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/windows/firebase_core_plugin_c_api.cpp",
+  "output": "plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/firebase_core_plugin_c_api.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_core",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_core_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_core_plugin.dir\\firebase_core_plugin.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_core\\windows\\firebase_core_plugin.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/windows/firebase_core_plugin.cpp",
+  "output": "plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/firebase_core_plugin.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_core",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_core_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_core_plugin.dir\\messages.g.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_core\\windows\\messages.g.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/windows/messages.g.cpp",
+  "output": "plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/messages.g.cpp.obj"
+},
+{
+  "directory": "C:/projects/flipmark/build/plugins/firebase_core",
+  "command": "C:\\mingw\\mingw64\\bin\\g++.exe -DFLUTTER_PLUGIN_IMPL -DINTERNAL_EXPERIMENTAL=1 -DUNICODE -D_DEBUG -D_HAS_EXCEPTIONS=0 -D_UNICODE @CMakeFiles/firebase_core_plugin.dir/includes_CXX.rsp -g -fvisibility=hidden /W4 /WX /wd\\\"4100\\\" /EHsc -o CMakeFiles\\firebase_core_plugin.dir\\flutter_firebase_plugin_registry.cpp.obj -c C:\\projects\\flipmark\\flipmark\\windows\\flutter\\ephemeral\\.plugin_symlinks\\firebase_core\\windows\\flutter_firebase_plugin_registry.cpp",
+  "file": "C:/projects/flipmark/flipmark/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/windows/flutter_firebase_plugin_registry.cpp",
+  "output": "plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir/flutter_firebase_plugin_registry.cpp.obj"
 }
 ]

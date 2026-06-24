@@ -57,6 +57,16 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/projects/flipmark/build/plugins/file_selector_windows/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/projects/flipmark/build/plugins/firebase_auth/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/projects/flipmark/build/plugins/firebase_core/cmake_install.cmake")
+endif()
+
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "C:/projects/flipmark/build/runner/flipmark.exe")
@@ -101,7 +111,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/projects/flipmark/build/runner/libcamera_windows_plugin.dll;C:/projects/flipmark/build/runner/libfile_selector_windows_plugin.dll")
+   "C:/projects/flipmark/build/runner/libcamera_windows_plugin.dll;C:/projects/flipmark/build/runner/libfile_selector_windows_plugin.dll;C:/projects/flipmark/build/runner/libfirebase_auth_plugin.a;C:/projects/flipmark/build/runner/libfirebase_core_plugin.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
@@ -111,6 +121,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "C:/projects/flipmark/build/runner" TYPE FILE FILES
     "C:/projects/flipmark/build/plugins/camera_windows/libcamera_windows_plugin.dll"
     "C:/projects/flipmark/build/plugins/file_selector_windows/libfile_selector_windows_plugin.dll"
+    "C:/projects/flipmark/build/plugins/firebase_auth/libfirebase_auth_plugin.a"
+    "C:/projects/flipmark/build/plugins/firebase_core/libfirebase_core_plugin.a"
     )
 endif()
 
