@@ -1,4 +1,0 @@
-# Treat all Makefiles and CMake files as vendored
-**/Makefile linguist-vendored
-**/*.cmake linguist-vendored
-**/CMakeLists.txt linguist-vendored
