@@ -67,7 +67,7 @@ class _ScannerPageState extends State<ScannerPage> {
 
               if (hasCapturedImage) const SizedBox(height: 20),
 
-              // ✅ SECOND BUTTON — now correct
+              // Connects to python backend
               if (hasCapturedImage)
                 ElevatedButton.icon(
                   onPressed: () async {

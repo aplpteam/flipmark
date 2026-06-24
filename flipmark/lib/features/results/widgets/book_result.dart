@@ -18,10 +18,10 @@ class BookResult {
   factory BookResult.fromJson(Map<String, dynamic> json) {
     return BookResult(
       title: json["title"] ?? "Untitled",
-      authors: json["authors"],
-      categories: json["categories"],
-      thumbnail: json["thumbnail"],
-      description: json["description"],
+      authors: json["authors"] ?? "Unknown",
+      categories: json["categories"] ?? "Unknown",
+      thumbnail: json["thumbnail"] ?? "Unknown",
+      description: json["description"] ?? "Unknown",
       distance: (json["distance"] is num) ? json["distance"].toDouble() : null,
     );
   }

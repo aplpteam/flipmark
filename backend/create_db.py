@@ -1,3 +1,4 @@
+# Make db to store history, needs to be implemented
 import pandas as pd
 import sqlite3
 

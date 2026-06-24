@@ -1,3 +1,4 @@
+import re
 import math
 import pickle
 import sqlite3
@@ -8,6 +9,7 @@ from sentence_transformers import SentenceTransformer
 from fastapi.middleware.cors import CORSMiddleware
 from paddleocr import PaddleOCR
 
+# How to run:
 # cd backend
 # .\venv\Scripts\activate
 # uvicorn main:app --reload
@@ -15,9 +17,7 @@ from paddleocr import PaddleOCR
 # stop: ctrl+C or taskkill /IM python.exe /F
 
 
-# -----------------------------
 # Load model, index, metadata
-# -----------------------------
 model = SentenceTransformer("all-MiniLM-L6-v2")
 index = faiss.read_index("books.index")
 metadata = pickle.load(open("books_metadata.pkl", "rb"))
@@ -35,7 +35,6 @@ app.add_middleware(
 def is_fiction_category(cat: str):
     cat = cat.lower()
 
-    # Hard block nonfiction
     if "nonfiction" in cat or "non-fiction" in cat:
         return False
 
@@ -50,9 +49,6 @@ def is_fiction_category(cat: str):
 
 @app.get("/similar")
 def similar_books(query: str, k: int = 5):
-    import re
-    import math
-
     def normalize_title(title: str):
         title = title.lower().strip()
 
@@ -90,13 +86,7 @@ def similar_books(query: str, k: int = 5):
 
 
     def is_combo_edition(title: str):
-        """
-        Detect omnibus editions like:
-        - 'Animal Farm and 1984'
-        - '1984 and Animal Farm'
-        - 'Lord of the Rings and The Hobbit'
-        - 'The Invisibles and The Invisible Kingdom'
-        """
+        # for books like "Animal Farm and 1984"
         return bool(re.search(
             r'([A-Z0-9][A-Za-z0-9]+.*)\s(and|&|/|;)\s+([A-Z0-9][A-Za-z0-9]+)',
             title
@@ -117,7 +107,7 @@ def similar_books(query: str, k: int = 5):
     query_lower = query.lower()
     query_is_dystopian = any(word in query_lower for word in DYSTOPIAN_QUERY_KEYWORDS)
 
-    # Canonical dystopian books to always allow
+    # Classic dystopian books to always allow
     DYSTOPIAN_CLASSICS = [
         "1984", "animal farm", "fahrenheit 451",
         "brave new world", "the handmaid's tale"
@@ -134,21 +124,12 @@ def similar_books(query: str, k: int = 5):
         category = str(row.get("categories", "")).lower()
         desc = (row.get("description") or "").lower()
 
-        # ---------------------------------------------------------
-        # 2. BLOCK COMBO EDITIONS
-        # ---------------------------------------------------------
         if is_combo_edition(row.get("title", "")):
             continue
 
-        # ---------------------------------------------------------
-        # 3. BLOCK DUPLICATES
-        # ---------------------------------------------------------
         if normalized in seen_titles:
             continue
         
-        # ---------------------------------------------------------
-        # STRICT NONFICTION BLOCKER (including juvenile nonfiction)
-        # ---------------------------------------------------------
         NONFICTION_TERMS = [
             "nonfiction", "non-fiction",
             "juvenile nonfiction", "juvenile non-fiction",
@@ -167,17 +148,12 @@ def similar_books(query: str, k: int = 5):
         if any(term in desc for term in NONFICTION_TERMS):
             continue
 
-        # ---------------------------------------------------------
-        # 5. DYSTOPIAN CLASSIC OVERRIDE
-        # ---------------------------------------------------------
         if query_is_dystopian and any(c in title_lower for c in DYSTOPIAN_CLASSICS):
 
-            # Clean NaN metadata
             for key, value in row.items():
                 if isinstance(value, float) and math.isnan(value):
                     row[key] = None
 
-            # Clean NaN distance
             if isinstance(dist, float) and math.isnan(dist):
                 dist = None
             else:
@@ -195,9 +171,7 @@ def similar_books(query: str, k: int = 5):
             if len(results) == k:
                 break
             continue
-        # ---------------------------------------------------------
-        # 7. FICTION DETECTION
-        # ---------------------------------------------------------
+      
         description_says_fiction = any(
             keyword in desc for keyword in [
                 "novel", "story", "dystopian", "utopian",
@@ -213,24 +187,15 @@ def similar_books(query: str, k: int = 5):
         if not (category_says_fiction or description_says_fiction):
             continue
 
-        # ---------------------------------------------------------
-        # 8. CLEAN METADATA NaNs
-        # ---------------------------------------------------------
         for key, value in row.items():
             if isinstance(value, float) and math.isnan(value):
                 row[key] = None
 
-        # ---------------------------------------------------------
-        # 9. CLEAN DISTANCE NaN
-        # ---------------------------------------------------------
         if isinstance(dist, float) and math.isnan(dist):
             dist = None
         else:
             dist = float(dist)
 
-        # ---------------------------------------------------------
-        # 10. ADD RESULT
-        # ---------------------------------------------------------
         results.append({
             "title": row.get("title"),
             "authors": row.get("authors"),
@@ -247,9 +212,7 @@ def similar_books(query: str, k: int = 5):
 
     return {"query": query, "results": results}
 
-
-
-# Initialize OCR once (fast)
+# Initialize PaddleOCR to extract text from the image
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 @app.post("/upload_synopsis")
@@ -263,17 +226,18 @@ async def upload_synopsis(file: UploadFile = File(...)):
         with open(temp_path, "wb") as f:
             f.write(contents)
 
-        # Run OCR
+        # Run PaddleOCR on the file
         result = ocr.ocr(temp_path, cls=True)
 
-        # Extract text lines
+        # Extract the recognized text lines
         text_lines = []
         for line in result[0]:
             text_lines.append(line[1][0])
 
+        # combines the lines into one string
         text = "\n".join(text_lines)
 
-        # Run similarity search
+        # Run similarity search, k=5 means return the top 5 most similar books
         return similar_books(query=text, k=5)
 
     except Exception as e:
@@ -283,12 +247,3 @@ async def upload_synopsis(file: UploadFile = File(...)):
 @app.get("/")
 def root():
     return {"message": "Backend is running"}
-
-@app.get("/books")
-def get_books():
-    conn = sqlite3.connect("books.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM books LIMIT 10")
-    rows = cursor.fetchall()
-    conn.close()
-    return {"books": rows}
