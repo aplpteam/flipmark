@@ -13,8 +13,7 @@ class GoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
-      height: 50,
+      width: 253,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           backgroundColor: Colors.white,
@@ -23,6 +22,7 @@ class GoogleButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/google_logo.png', height: 24),
