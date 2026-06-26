@@ -6,6 +6,7 @@ import 'widgets/auth_field_widget.dart';
 import 'widgets/enter_button_widget.dart';
 import 'widgets/auth_appbar_widget.dart';
 import 'widgets/google_button.dart';
+import 'widgets/github_button.dart';
 import 'signup_page.dart';
 import 'widgets/navigation_text.dart';
 
@@ -149,6 +150,33 @@ class _LoginPageState extends State<LoginPage> {
                 SnackBarPopUp(
                   content: errorMessage.toString(),
                   color: Colors.redAccent,
+                ),
+              );
+            }
+          }
+        },
+      ),
+      SizedBox(height: 15),
+      GitHubButton(
+        label: "Sign in with Github",
+        onPressed: () async {
+          try {
+            final credential = await AuthService.authSignInWithGitHub();
+
+            if (credential == null) return;
+
+            if (context.mounted) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => HomePage()),
+              );
+            }
+          } catch (errorMessage) {
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBarPopUp(
+                  content: errorMessage.toString(),
+                  color: const Color.fromARGB(255, 0, 0, 0),
                 ),
               );
             }
