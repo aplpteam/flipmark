@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'widgets/auth_field_widget.dart';
 import 'widgets/enter_button_widget.dart';
 import 'widgets/auth_appbar_widget.dart';
+import 'widgets/google_button.dart';
 import 'signup_page.dart';
 import 'widgets/navigation_text.dart';
 
@@ -121,6 +122,33 @@ class _LoginPageState extends State<LoginPage> {
                   curve: Curves.easeOutBack,
                   duration: Duration(milliseconds: 400),
                   reverseDuration: Duration(milliseconds: 200),
+                ),
+              );
+            }
+          }
+        },
+      ),
+      SizedBox(height: 15),
+      GoogleButton(
+        label: "Login with Google",
+        onPressed: () async {
+          try {
+            final credential = await AuthService.authSignInWithGoogle();
+
+            if (credential == null) return;
+
+            if (context.mounted) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => HomePage()),
+              );
+            }
+          } catch (errorMessage) {
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBarPopUp(
+                  content: errorMessage.toString(),
+                  color: Colors.redAccent,
                 ),
               );
             }

@@ -1,70 +1,61 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
+  // -----------------------------
+  // EMAIL + PASSWORD SIGN UP
+  // -----------------------------
   static Future<UserCredential> authCreateAccount({
     required String emailAddress,
     required String password,
   }) async {
-    try {
-      final credential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-            email: emailAddress,
-            password: password,
-          );
-      return credential;
-    } on FirebaseAuthException catch (e) {
-        throw _authMapError(e);
-    }
+    return await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: emailAddress,
+      password: password,
+    );
   }
 
+  // -----------------------------
+  // EMAIL + PASSWORD LOGIN
+  // -----------------------------
   static Future<UserCredential> authSignIn({
     required String emailAddress,
     required String password,
   }) async {
-    try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
+    return await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailAddress,
+      password: password,
+    );
+  }
+
+  // -----------------------------
+  // GOOGLE SIGN-IN (WEB + ANDROID)
+  // -----------------------------
+  static Future<UserCredential?> authSignInWithGoogle() async {
+    if (kIsWeb) {
+      // WEB FLOW
+      GoogleAuthProvider googleProvider = GoogleAuthProvider();
+
+      googleProvider
+        ..addScope('email')
+        ..setCustomParameters({'prompt': 'select_account'});
+
+      return await FirebaseAuth.instance.signInWithPopup(googleProvider);
+    } else {
+      // ANDROID FLOW
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser == null) return null;
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
       );
-      return credential;
-    } on FirebaseAuthException catch (e) {
-        throw _authMapError(e);
-    }
-  }
 
-  static Future<void> authSignOut() async{
-    await FirebaseAuth.instance.signOut();
-  }
-
-  static String _authMapError(FirebaseAuthException e) {
-    switch (e.code) {
-      //create account errors
-      case 'weak-password':
-        return 'Password is too weak.';
-      case 'email-already-in-use':
-        return 'An account already exists for this email.';
-      case 'operation-not-allowed':
-        return 'Email/password sign-in is not enabled.';
-      //sign up errors
-
-      case 'wrong-password':
-      case 'invalid-credential':
-        return "invalid email or password entered";
-      case 'user-disabled':
-        return 'This account has been disabled';
-
-      // General errors
-      case 'invalid-email':
-        return 'Invalid email address.';
-
-      case 'too-many-requests':
-        return 'Too many attempts. Try again later.';
-
-      case 'network-request-failed':
-        return 'No internet connection.';
-
-      default:
-        return 'Something went wrong. Please try again.';
+      return await FirebaseAuth.instance.signInWithCredential(credential);
     }
   }
 }

@@ -12,7 +12,20 @@
           "package_name": "com.example.flipmark"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "364168663175-7t2tkqmb8bri5su1891pmkghvkk856ui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flipmark",
+            "certificate_hash": "c808d3c83272b4d28a0cec87e550e1c60e562054"
+          }
+        },
+        {
+          "client_id": "364168663175-i5bmj4ccm0o76ds6rbsfgolhb1ljaqm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCwKbCAIQ_XTo_HwTaE8JU1aAA9TxuUOog"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364168663175-i5bmj4ccm0o76ds6rbsfgolhb1ljaqm6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "364168663175-8n1jb3mi836vn6h4990so2f89m5vltbb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flipmark"
+              }
+            }
+          ]
         }
       }
     }
