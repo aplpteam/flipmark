@@ -7,6 +7,7 @@ import 'widgets/auth_field_widget.dart';
 import 'widgets/enter_button_widget.dart';
 import 'widgets/navigation_text.dart';
 import 'widgets/snackbar_popup.dart';
+import 'widgets/google_button.dart';
 //other screens and classes
 import '../home/home_page.dart';
 import 'auth_service.dart';
@@ -105,17 +106,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         password: _passwordController.text.trim(),
                       );
                       if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBarPopUp(
-                            content: "Account Created Successfully",
-                            color: Colors.greenAccent,
-                          ),
-                          snackBarAnimationStyle: AnimationStyle(
-                            curve: Curves.easeOutBack,
-                            duration: Duration(milliseconds: 400),
-                            reverseDuration: Duration(milliseconds: 200),
-                          ),
-                        );
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute<void>(
@@ -140,6 +130,40 @@ class _SignUpPageState extends State<SignUpPage> {
                     }
                   },
                   icon: Icon(Icons.arrow_forward),
+                ),
+                SizedBox(height: 15),
+                GoogleButton(
+                  onPressed: () async {
+                    try {
+                      final credential =
+                          await AuthService.authSignInWithGoogle();
+
+                      if (credential == null) return;
+
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBarPopUp(
+                            content: "Account Created Successfully via Google",
+                            color: Colors.greenAccent,
+                          ),
+                        );
+
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => HomePage()),
+                        );
+                      }
+                    } catch (errorMessage) {
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBarPopUp(
+                            content: errorMessage.toString(),
+                            color: Colors.redAccent,
+                          ),
+                        );
+                      }
+                    }
+                  },
                 ),
                 SizedBox(height: 10),
                 NavigationText(

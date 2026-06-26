@@ -18,10 +18,7 @@ class EnterButton extends StatelessWidget {
       width: 150,
       child: ElevatedButton.icon(
         icon: icon,
-        label: Text(
-          label,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        label: Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
         iconAlignment: IconAlignment.end,
         style: ButtonStyle(
           backgroundColor: WidgetStatePropertyAll<Color>(

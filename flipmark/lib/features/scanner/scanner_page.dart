@@ -62,7 +62,6 @@ class _ScannerPageState extends State<ScannerPage> {
                 FileHandler(
                   onFileSelected: _imageSelected,
                   hasFile: hasCapturedImage,
-                  file: _image,
                 ),
 
               if (hasCapturedImage) const SizedBox(height: 20),

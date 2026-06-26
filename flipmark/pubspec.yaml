@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   firebase_core: ^4.10.0
   firebase_auth: ^6.5.2
+  google_sign_in: ^6.2.1 
   camera_windows: ^0.2.6+4
   image_picker: ^1.2.2
   camera: ^0.11.0
@@ -64,6 +65,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  
+  assets:
+    - assets/google_logo.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
