@@ -8,6 +8,7 @@ import 'widgets/enter_button_widget.dart';
 import 'widgets/navigation_text.dart';
 import 'widgets/snackbar_popup.dart';
 import 'widgets/google_button.dart';
+import 'widgets/github_button.dart';
 //other screens and classes
 import '../home/home_page.dart';
 import 'auth_service.dart';
@@ -165,6 +166,34 @@ class _SignUpPageState extends State<SignUpPage> {
                     }
                   },
                 ),
+                SizedBox(height: 15),
+                GitHubButton(
+                  onPressed: () async {
+                    try {
+                      final credential =
+                          await AuthService.authSignInWithGitHub();
+
+                      if (credential == null) return;
+
+                      if (context.mounted) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => HomePage()),
+                        );
+                      }
+                    } catch (errorMessage) {
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBarPopUp(
+                            content: errorMessage.toString(),
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        );
+                      }
+                    }
+                  },
+                ),
+
                 SizedBox(height: 10),
                 NavigationText(
                   normalText: "Already have an account?",

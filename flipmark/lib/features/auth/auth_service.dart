@@ -30,7 +30,7 @@ class AuthService {
   }
 
   // -----------------------------
-  // GOOGLE SIGN-IN (WEB + ANDROID)
+  // GOOGLE SIGN-IN/SIGN-UP (WEB + ANDROID)
   // -----------------------------
   static Future<UserCredential?> authSignInWithGoogle() async {
     if (kIsWeb) {
@@ -56,6 +56,31 @@ class AuthService {
       );
 
       return await FirebaseAuth.instance.signInWithCredential(credential);
+    }
+  }
+
+  // -----------------------------
+  // GITHUB SIGN-IN/SIGN-UP (WEB + ANDROID)
+  // -----------------------------
+  static Future<UserCredential?> authSignInWithGitHub() async {
+    try {
+      GithubAuthProvider githubProvider = GithubAuthProvider();
+
+      githubProvider
+        ..addScope('read:user')
+        ..addScope('user:email');
+
+      if (kIsWeb) {
+        // WEB FLOW: Uses the web popup interface
+        return await FirebaseAuth.instance.signInWithPopup(githubProvider);
+      } else {
+        // ANDROID FLOW: Uses the universal mobile provider interface
+        return await FirebaseAuth.instance.signInWithProvider(githubProvider);
+      }
+    } on FirebaseAuthException catch (e) {
+      rethrow;
+    } catch (e) {
+      rethrow;
     }
   }
 }
