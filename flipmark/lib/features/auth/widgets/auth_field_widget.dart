@@ -32,6 +32,7 @@ class AuthTextField extends StatelessWidget {
             border: InputBorder.none,
             contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             hintText: labelText,
+            labelStyle: TextStyle(color: Colors.white),
             hintStyle: TextStyle(
               color: Colors.white.withValues(alpha: 0.6),
               fontWeight: FontWeight.w300,

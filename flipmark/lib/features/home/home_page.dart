@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flipmark/features/scanner/scanner_page.dart';
 import '../themes/gradient_scaffold.dart';
 import '../auth/widgets/snackbar_popup.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -59,9 +60,9 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),
-              textStyle: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
+              textStyle: GoogleFonts.comicNeue(
+                fontWeight: FontWeight.w900,
+                fontSize: 18,
               ),
             ),
           ),
@@ -73,12 +74,12 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  child: const Text(
-                    "Welcome Home!",
-                    style: TextStyle(
+                  margin: const EdgeInsets.only(top: 35),
+                  child: Text(
+                    "Welcome Home",
+                    style: GoogleFonts.comicNeue(
                       color: Colors.white,
-                      fontSize: 26,
+                      fontSize: 30,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
@@ -107,7 +108,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
                               ),
                             );
                           },
-                          child: const Text('Camera Scan'),
+                          child: const Text('Camera'),
                         ),
                         const SizedBox(height: 150),
                         ElevatedButton(

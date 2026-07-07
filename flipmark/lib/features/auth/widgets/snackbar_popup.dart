@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SnackBarPopUp extends SnackBar {
   SnackBarPopUp({required String content, required Color color, super.key})
     : super(
-        content: Text(content),
+        content: Text(content, style: TextStyle(color: Colors.black)),
         backgroundColor: color,
         elevation: 1.5,
         behavior: SnackBarBehavior.floating,
