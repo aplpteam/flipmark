@@ -116,7 +116,10 @@ class _LoginPageState extends State<LoginPage> {
             if (context.mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBarPopUp(
-                  content: errorMessage.toString(),
+                  content: errorMessage
+                      .toString()
+                      .replaceAll("[firebase_auth/invalid-credential]", "")
+                      .trim(),
                   color: Colors.redAccent,
                 ),
                 snackBarAnimationStyle: AnimationStyle(
@@ -209,5 +212,9 @@ class _LoginPageState extends State<LoginPage> {
       return "Email missing period identifier or @ symbol";
     }
     return null;
+  }
+
+  String _credentialErrorReplaceAll(final String message) {
+    return message.replaceAll("[firebase_auth/invalid-credential]", "").trim();
   }
 }
