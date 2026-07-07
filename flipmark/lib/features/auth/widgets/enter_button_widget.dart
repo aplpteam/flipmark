@@ -15,16 +15,27 @@ class EnterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
+      width: 250,
       child: ElevatedButton.icon(
         icon: icon,
-        label: Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
+        label: Text(label, style: TextStyle(fontWeight: FontWeight.w900)),
         iconAlignment: IconAlignment.end,
         style: ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll<Color>(
-            const Color.fromARGB(208, 6, 213, 20),
-          ),
+          backgroundColor: WidgetStatePropertyAll<Color>(Colors.white),
           foregroundColor: WidgetStatePropertyAll<Color>(Colors.black),
+          padding: const WidgetStatePropertyAll<EdgeInsets>(
+            EdgeInsets.symmetric(vertical: 18.5),
+          ),
+          side: WidgetStatePropertyAll<BorderSide>(BorderSide(
+            color: Colors.black.withValues(alpha: 0.7),
+            width: 2.0,
+            strokeAlign: 1.0,
+          )),
+          shape: WidgetStatePropertyAll<OutlinedBorder>(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+            )
+          ),
         ),
         onPressed: onPressed,
         autofocus: true,

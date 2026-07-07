@@ -8,7 +8,7 @@ import 'dart:convert';
 import 'dart:io';
 import '../results/widgets/book_result.dart';
 import '../results/results_page.dart';
-
+import '../themes/gradient_scaffold.dart';
 class ScannerPage extends StatefulWidget {
   final String mode;
 
@@ -38,9 +38,10 @@ class _ScannerPageState extends State<ScannerPage> {
     final bool isCameraMode = (widget.mode == "Camera");
     final bool hasCapturedImage = _image != null;
 
-    return Scaffold(
+    return GradientScaffold(
+      colorList: [const Color(0xFF8900AE), const Color(0xFF330040)],
       appBar: AppBar(title: Text('${widget.mode} Scanner'), centerTitle: true),
-      body: Center(
+      child: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
