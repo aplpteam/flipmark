@@ -35,13 +35,15 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     _offsetAnimation = Tween<double>(begin: -16.0, end: 16.0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
-    _animationController.repeat(reverse:  true);
+    _animationController.repeat(reverse: true);
   }
-  @override 
+
+  @override
   void dispose() {
     _animationController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
@@ -92,7 +94,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
                       children: [
                         ElevatedButton(
                           onPressed: () {},
-                          child: const Text('Text Entry'),
+                          child: const Text('Text'),
                         ),
                       ],
                     ),
@@ -154,23 +156,38 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
                       try {
                         await AuthService.authLogOut();
                         if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBarPopUp(
+                              content: "Logout was successful.",
+                              color: Colors.greenAccent,
+                            ),
+                            snackBarAnimationStyle: AnimationStyle(
+                              curve: Curves.easeOutBack,
+                              duration: Duration(milliseconds: 400),
+                              reverseDuration: Duration(milliseconds: 200),
+                            ),
+                          );
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute<void>(
                               builder: (context) => UnifiedAuthPage(),
                             ),
                           );
-                          SnackBarPopUp(
-                            content:
-                                "Logout successful, going back to login screen",
-                            color: Colors.greenAccent,
-                          );
                         }
                       } catch (error) {
-                        SnackBarPopUp(
-                          content: error.toString().trim(),
-                          color: Colors.redAccent,
-                        );
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBarPopUp(
+                              content: error.toString().trim(),
+                              color: Colors.redAccent,
+                            ),
+                            snackBarAnimationStyle: AnimationStyle(
+                              curve: Curves.easeOutBack,
+                              duration: Duration(milliseconds: 400),
+                              reverseDuration: Duration(milliseconds: 200),
+                            ),
+                          );
+                        }
                       }
                     },
                     style: ButtonStyle(
@@ -191,7 +208,11 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
               animation: _animationController,
               builder: (context, child) => Transform.translate(
                 offset: (Offset(0, -30 + _offsetAnimation.value)),
-                child: Icon(Icons.bookmarks_outlined, size: 40, color: Colors.greenAccent),
+                child: Icon(
+                  Icons.bookmarks_outlined,
+                  size: 40,
+                  color: Colors.greenAccent,
+                ),
               ),
             ),
           ],
