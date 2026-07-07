@@ -1,3 +1,4 @@
+import 'package:flipmark/features/auth/unified_auth_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flipmark/features/auth/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark(),
-      home: LoginPage(),
+      home: UnifiedAuthPage(),
     );
   }
 }

@@ -83,4 +83,12 @@ class AuthService {
       rethrow;
     }
   }
+
+  static Future<void> authLogOut() async {
+    try {
+        return await FirebaseAuth.instance.signOut();
+    } on FirebaseAuthException {
+        rethrow;
+    }
+  }
 }
